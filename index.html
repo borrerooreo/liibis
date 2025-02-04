@@ -6,14 +6,12 @@
     <title>Mi San Valentín</title>
     <style>
         body {
-            background: black url(https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/castillo.jpg) no-repeat center center fixed;
-            background-size: cover;
+            background: black url (https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/florest-pixel.gif) no-repeat center center fixed;
             color: white;
             font-family: 'Gothic A1', sans-serif;
             text-align: center;
             padding: 50px;
             position: relative;
-            overflow: hidden;
         }
         .mensaje {
             font-size: 24px;
@@ -32,61 +30,58 @@
         .opciones button:hover {
             background: crimson;
         }
-        .corazones {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        .corazon {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: url('URL_DEL_CORAZÓN') no-repeat center;
-            background-size: contain;
-            animation: flotar 5s linear infinite;
-        }
-        @keyframes flotar {
-            0% { transform: translateY(0); opacity: 1; }
-            100% { transform: translateY(-100vh); opacity: 0; }
-        }
-        .mensaje-tierno {
-            display: none;
+        .contenedor-imagenes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
             margin-top: 20px;
-            font-style: italic;
-            font-size: 20px;
         }
         .gif {
             display: none;
-            margin-top: 20px;
+            max-width: 200px;
+        }
+        .flores {
+            display: none;
+            max-width: 200px;
+            order: 2; /* Asegura que la flor vaya a lado derecho de la pantalla */
         }
     </style>
 </head>
 <body>
-    <div class="mensaje">Hola hermosa, ¿Quieres ser mi San Valentín?</div>
+    <div class="mensaje"> ¿Quieres ser mi San Valentín?</div>
     <div class="opciones">
         <button onclick="mostrarSorpresa()">Sí</button>
-        <button onclick="alert('Oh no, mi corazón se rompe... 💔')">No</button>
-        <button onclick="alert('Tómate tu tiempo, pero recuerda que te espero entre las sombras. 🌑')">Déjame pensarlo</button>
+        <button onclick="mostrarTristeza()">No</button>
+        <button onclick="mostrarPensamiento()">Déjame pensarlo</button>
     </div>
-    <div class="mensaje-tierno">Te busco entre las penumbras<br>Y encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti<br>Así que por favor, apodérate de mi cuerpo y mente<br> Déjame en tus labios renacer<br>Toma mis alas y úname a ti</div>
-    <img class="gif" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat.gif" alt="Gatito Tierno"></div>
+    <div class="mensaje-tierno">Te busco entre las penumbras<br>Encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti,<br>Así que por favor, apodérate de mi cuerpo y mente<br> Dejame en tus labios renacer,<br>Toma mis alas y úname a ti</div>
+    <div class="contenedor-imagenes">
+        <img class="gif" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat.gif" alt="Gatito Tierno">
+        <img class="flores" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/flowers-rose.gif" alt="Ramo de flores">
+    </div>
+    <img class="gif-triste" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/boomb-cat-boomb.gif" alt="GIF Triste">
+    <img class="gif-pensando" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat-death-penalty.gif"GIF Pensando">
     <script>
         function mostrarSorpresa() {
             document.querySelector('.mensaje-tierno').style.display = 'block';
             document.querySelector('.gif').style.display = 'block';
+            document.querySelector('.flores').style.display = 'block';
+            document.querySelector('.gif-triste').style.display = 'none';
+            document.querySelector('.gif-pensando').style.display = 'none';
         }
-        function crearCorazon() {
-            const corazon = document.createElement('div');
-            corazon.classList.add('corazon');
-            document.querySelector('.corazones').appendChild(corazon);
-            corazon.style.left = Math.random() * window.innerWidth + 'px';
-            corazon.style.top = window.innerHeight + 'px';
-            setTimeout(() => corazon.remove(), 5000);
+        function mostrarTristeza() {
+            document.querySelector('.gif-triste').style.display = 'block';
+            document.querySelector('.gif').style.display = 'none';
+            document.querySelector('.flores').style.display = 'none';
+            document.querySelector('.gif-pensando').style.display = 'none';
         }
-        setInterval(crearCorazon, 500);
+        function mostrarPensamiento() {
+            document.querySelector('.gif-pensando').style.display = 'block';
+            document.querySelector('.gif').style.display = 'none';
+            document.querySelector('.flores').style.display = 'none';
+            document.querySelector('.gif-triste').style.display = 'none';
+        }
     </script>
 </body>
 </html>
