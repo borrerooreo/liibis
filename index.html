@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi San Valentín</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
         body {
-            background: url('https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/evil-castle.gif') no-repeat center center fixed;
+            background: black url('https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/evil-castle.gif') no-repeat center center fixed;
             background-size: cover;
             color: red;
-            font-family: 'UnifrakturCook', cursive;
+            font-family: 'Gothic A1', sans-serif;
             text-align: center;
             padding: 50px;
             position: relative;
         }
         .mensaje {
-            font-size: 30px;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px black;
             margin-bottom: 20px;
         }
         .opciones button {
             background: darkred;
-            color: black;
+            color: white;
             border: none;
             padding: 10px 20px;
             margin: 5px;
             cursor: pointer;
             font-size: 18px;
             border-radius: 5px;
-            font-family: 'UnifrakturCook', cursive;
+            text-shadow: 2px 2px 4px black;
         }
         .opciones button:hover {
             background: crimson;
@@ -36,55 +37,44 @@
         .mensaje-tierno {
             display: none;
             margin-top: 20px;
-            font-size: 24px;
+            font-style: italic;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px black;
         }
-        .gif, .flores, .gif-triste, .gif-pensando {
+        .gif {
             display: none;
             margin-top: 20px;
-        }
-        .gif-momento {
-            display: none;
-            margin-top: 20px;
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
+            max-width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="mensaje">Hola hermosa, ¿Quieres ser mi San Valentín?</div>
+    <div class="mensaje">¿Quieres ser mi San Valentín?🤍🌹</div>
     <div class="opciones">
         <button onclick="mostrarSorpresa()">Sí</button>
-        <button onclick="mostrarTristeza()">No</button>
+        <button onclick="mostrarRechazo()">No</button>
         <button onclick="mostrarPensamiento()">Déjame pensarlo</button>
     </div>
-    <div class="mensaje-tierno">Te busco entre las penumbras<br>Encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti,<br>Así que por favor apodérate de mi cuerpo y mente<br>Luego déjame en tus labios renacer,<br>Toma mis alas y úname a ti</div>
-    <div class="contenedor-imagenes" style="display: none;">
-        <img class="gif" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat.gif" alt="Gatito Tierno">
-        <img class="flores" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/flowers-rose.gif" alt="Ramo de flores">
-    </div>
-    <img class="gif-triste gif-momento" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/boomb-cat-boomb.gif" alt="GIF Triste" style="display: none;">
-    <img class="gif-pensando gif-momento" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat-death-penalty.gif" alt="GIF Pensando" style="display: none;">
+    <div class="mensaje-tierno">Te busco entre las penumbras<br>Encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti,<br>Así que por favor,toma mi cuerpo y mi mente<br>toma mis alas y unelas a ti<br>Y permiteme en tus labios renacer🧛‍♀️</div>
+    <img class="gif" id="gifSi" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat.gif" alt="Gatito Tierno">
+    <img class="gif" id="gifFlor" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/flowers-rose.gif" alt="Ramo de Flores">
+    <img class="gif" id="gifNo" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/boomb-cat-boomb.gif" alt="Rechazo">
+    <img class="gif" id="gifPensar" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat-death-penalty.gif" alt="Pensando">
     <script>
         function mostrarSorpresa() {
-            alert('¡Sabía que dirías que sí! ❤️');
+            document.getElementById('gifSi').style.display = 'block';
+            document.getElementById('gifFlor').style.display = 'block';
             document.querySelector('.mensaje-tierno').style.display = 'block';
-            document.querySelector('.contenedor-imagenes').style.display = 'flex';
-            document.querySelector('.gif-triste').style.display = 'none';
-            document.querySelector('.gif-pensando').style.display = 'none';
+            setTimeout(() => alert("¡Sabía que dirías que sí! ❤️"), 500);
         }
-        function mostrarTristeza() {
-            alert('Oh no, mi corazón se rompe... 💔');
-            document.querySelector('.gif-triste').style.display = 'block';
-            document.querySelector('.contenedor-imagenes').style.display = 'none';
-            document.querySelector('.gif-pensando').style.display = 'none';
+        function mostrarRechazo() {
+            document.getElementById('gifNo').style.display = 'block';
+            setTimeout(() => alert("No es verdad 😥💔"), 500);
         }
         function mostrarPensamiento() {
-            alert('Tómate tu tiempo, esperaré hasta que digas que sí. 🌑');
-            document.querySelector('.gif-pensando').style.display = 'block';
-            document.querySelector('.contenedor-imagenes').style.display = 'none';
-            document.querySelector('.gif-triste').style.display = 'none';
+            document.getElementById('gifPensar').style.display = 'block';
+            setTimeout(() => alert("Tómate tu tiempo, esperaré hasta que digas que sí. 🌑"), 500);
         }
     </script>
 </body>
