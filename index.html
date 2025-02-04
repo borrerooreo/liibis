@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi San Valentín</title>
+    <style>
+        body {
+            background: black url('https://i.imgur.com/3a3bL3v.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: 'Gothic A1', sans-serif;
+            text-align: center;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .mensaje {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .opciones button {
+            background: darkred;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .opciones button:hover {
+            background: crimson;
+        }
+        .corazones {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .corazon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: url('https://i.imgur.com/J7dqG7n.png') no-repeat center;
+            background-size: contain;
+            animation: flotar 5s linear infinite;
+        }
+        @keyframes flotar {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+        .mensaje-tierno {
+            display: none;
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 20px;
+        }
+        .gif {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mensaje">Hola hermosa, ¿Quieres ser mi San Valentín?</div>
+    <div class="opciones">
+        <button onclick="mostrarSorpresa()">Sí</button>
+        <button onclick="alert('Oh no, mi corazón se rompe... 💔')">No</button>
+        <button onclick="alert('Tómate tu tiempo, pero recuerda que te espero entre las sombras. 🌑')">Déjame pensarlo</button>
+    </div>
+    <div class="mensaje-tierno">Te busco entre las penumbras<br>Encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti,<br>Así que por favor apodérate de mi cuerpo y mente<br>Luego déjame en tus labios renacer,<br>Toma mis alas y úname a ti</div>
+    <img class="gif" src="https://media.tenor.com/Z3jz_3-Y6qYAAAAC/cute-kitty.gif" alt="Gatito Tierno">
+    <div class="corazones"></div>
+    <script>
+        function mostrarSorpresa() {
+            document.querySelector('.mensaje-tierno').style.display = 'block';
+            document.querySelector('.gif').style.display = 'block';
+        }
+        function crearCorazon() {
+            const corazon = document.createElement('div');
+            corazon.classList.add('corazon');
+            document.querySelector('.corazones').appendChild(corazon);
+            corazon.style.left = Math.random() * window.innerWidth + 'px';
+            corazon.style.top = window.innerHeight + 'px';
+            setTimeout(() => corazon.remove(), 5000);
+        }
+        setInterval(crearCorazon, 500);
+    </script>
+</body>
+</html>
