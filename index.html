@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi San Valentín</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
         body {
-            background: url('https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/florest-pixel.gif') no-repeat center center fixed;
+            background: url('https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/evil-castle.gif') no-repeat center center fixed;
             background-size: cover;
-            color: white;
-            font-family: 'Gothic A1', sans-serif;
+            color: red;
+            font-family: 'UnifrakturCook', cursive;
             text-align: center;
             padding: 50px;
             position: relative;
@@ -20,33 +21,21 @@
         }
         .opciones button {
             background: darkred;
-            color: white;
+            color: black;
             border: none;
             padding: 10px 20px;
             margin: 5px;
             cursor: pointer;
             font-size: 18px;
             border-radius: 5px;
+            font-family: 'UnifrakturCook', cursive;
         }
         .opciones button:hover {
             background: crimson;
         }
-        .mensaje-tierno {
+        .mensaje-tierno, .gif, .flores, .gif-triste, .gif-pensando {
             display: none;
             margin-top: 20px;
-            font-style: italic;
-            font-size: 20px;
-        }
-        .contenedor-imagenes {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .gif, .flores, .gif-triste, .gif-pensando {
-            display: none;
-            max-width: 200px;
         }
         .gif-momento {
             display: none;
@@ -59,14 +48,14 @@
     </style>
 </head>
 <body>
-    <div class="mensaje">¿Quieres ser mi San Valentín?✨</div>
+    <div class="mensaje"> ¿Quieres ser mi San Valentín?🌹</div>
     <div class="opciones">
         <button onclick="mostrarSorpresa()">Sí</button>
         <button onclick="mostrarTristeza()">No</button>
         <button onclick="mostrarPensamiento()">Déjame pensarlo</button>
     </div>
-    <div class="mensaje-tierno">Te busco entre las penumbras<br>Encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti,<br>Así que por favor apodérate de mi cuerpo y mente<br>Luego déjame en tus labios renacer,<br>Toma mis alas y úname a ti</div>
-    <div class="contenedor-imagenes">
+    <div class="mensaje-tierno">Te busco entre las penumbras<br>Encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti,<br>Así que por favor, toma mi mente y mi cuerpo<br>Toma mis alas y úname a ti<br>Luego déjame renacer en tus labios</div>
+    <div class="contenedor-imagenes" style="display: none;">
         <img class="gif" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat.gif" alt="Gatito Tierno">
         <img class="flores" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/flowers-rose.gif" alt="Ramo de flores">
     </div>
@@ -74,25 +63,22 @@
     <img class="gif-pensando gif-momento" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat-death-penalty.gif" alt="GIF Pensando">
     <script>
         function mostrarSorpresa() {
-            document.querySelector('.mensaje').innerText = 'Eres la mujer mas hermosa del mundo 🤍';
+            alert('Eres la mujer mas hermosa del mundo 🤍');
             document.querySelector('.mensaje-tierno').style.display = 'block';
-            document.querySelector('.gif').style.display = 'block';
-            document.querySelector('.flores').style.display = 'block';
+            document.querySelector('.contenedor-imagenes').style.display = 'flex';
             document.querySelector('.gif-triste').style.display = 'none';
             document.querySelector('.gif-pensando').style.display = 'none';
         }
         function mostrarTristeza() {
-            document.querySelector('.mensaje').innerText = 'Oh no viejo 💔😥';
+            alert('No es cierto  😥💔');
             document.querySelector('.gif-triste').style.display = 'block';
-            document.querySelector('.gif').style.display = 'none';
-            document.querySelector('.flores').style.display = 'none';
+            document.querySelector('.contenedor-imagenes').style.display = 'none';
             document.querySelector('.gif-pensando').style.display = 'none';
         }
         function mostrarPensamiento() {
-            document.querySelector('.mensaje').innerText = 'Tómate tu tiempo, esperaré hasta que digas que sí. ☠';
+            alert('Tómate tu tiempo, esperaré hasta que digas que sí. ☠');
             document.querySelector('.gif-pensando').style.display = 'block';
-            document.querySelector('.gif').style.display = 'none';
-            document.querySelector('.flores').style.display = 'none';
+            document.querySelector('.contenedor-imagenes').style.display = 'none';
             document.querySelector('.gif-triste').style.display = 'none';
         }
     </script>
