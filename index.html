@@ -16,7 +16,7 @@
             position: relative;
         }
         .mensaje {
-            font-size: 24px;
+            font-size: 30px;
             margin-bottom: 20px;
         }
         .opciones button {
@@ -33,7 +33,12 @@
         .opciones button:hover {
             background: crimson;
         }
-        .mensaje-tierno, .gif, .flores, .gif-triste, .gif-pensando {
+        .mensaje-tierno {
+            display: none;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .gif, .flores, .gif-triste, .gif-pensando {
             display: none;
             margin-top: 20px;
         }
@@ -48,7 +53,7 @@
     </style>
 </head>
 <body>
-    <div class="mensaje">¿Quieres ser mi San Valentín?🌹</div>
+    <div class="mensaje">Hola hermosa, ¿Quieres ser mi San Valentín?</div>
     <div class="opciones">
         <button onclick="mostrarSorpresa()">Sí</button>
         <button onclick="mostrarTristeza()">No</button>
@@ -59,24 +64,24 @@
         <img class="gif" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat.gif" alt="Gatito Tierno">
         <img class="flores" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/flowers-rose.gif" alt="Ramo de flores">
     </div>
-    <img class="gif-triste gif-momento" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/boomb-cat-boomb.gif" alt="GIF Triste">
-    <img class="gif-pensando gif-momento" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat-death-penalty.gif" alt="GIF Pensando">
+    <img class="gif-triste gif-momento" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/boomb-cat-boomb.gif" alt="GIF Triste" style="display: none;">
+    <img class="gif-pensando gif-momento" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat-death-penalty.gif" alt="GIF Pensando" style="display: none;">
     <script>
         function mostrarSorpresa() {
-            alert('Eres la Mujer mas hermosa del mundo🤍');
+            alert('¡Sabía que dirías que sí! ❤️');
             document.querySelector('.mensaje-tierno').style.display = 'block';
             document.querySelector('.contenedor-imagenes').style.display = 'flex';
             document.querySelector('.gif-triste').style.display = 'none';
             document.querySelector('.gif-pensando').style.display = 'none';
         }
         function mostrarTristeza() {
-            alert('No es cierto 😥💔');
+            alert('Oh no, mi corazón se rompe... 💔');
             document.querySelector('.gif-triste').style.display = 'block';
             document.querySelector('.contenedor-imagenes').style.display = 'none';
             document.querySelector('.gif-pensando').style.display = 'none';
         }
         function mostrarPensamiento() {
-            alert('Tómate tu tiempo, esperaré hasta que digas que sí☠ Por favor di que si😔');
+            alert('Tómate tu tiempo, esperaré hasta que digas que sí. 🌑');
             document.querySelector('.gif-pensando').style.display = 'block';
             document.querySelector('.contenedor-imagenes').style.display = 'none';
             document.querySelector('.gif-triste').style.display = 'none';
