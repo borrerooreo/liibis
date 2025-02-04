@@ -6,7 +6,8 @@
     <title>Mi San Valentín</title>
     <style>
         body {
-            background: black url (https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/florest-pixel.gif) no-repeat center center fixed;
+            background: url('https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/florest-pixel.gif') no-repeat center center fixed;
+            background-size: cover;
             color: white;
             font-family: 'Gothic A1', sans-serif;
             text-align: center;
@@ -37,50 +38,60 @@
             gap: 20px;
             margin-top: 20px;
         }
-        .gif {
+        .gif, .flores, .gif-triste, .gif-pensando {
             display: none;
             max-width: 200px;
         }
-        .flores {
+        .gif-momento {
             display: none;
-            max-width: 200px;
-            order: 2; /* Asegura que la flor vaya a lado derecho de la pantalla */
+            margin-top: 20px;
+            max-width: 300px;
         }
     </style>
 </head>
 <body>
-    <div class="mensaje"> ¿Quieres ser mi San Valentín?</div>
+    <div class="mensaje">Hola hermosa, ¿Quieres ser mi San Valentín?</div>
     <div class="opciones">
         <button onclick="mostrarSorpresa()">Sí</button>
         <button onclick="mostrarTristeza()">No</button>
         <button onclick="mostrarPensamiento()">Déjame pensarlo</button>
     </div>
-    <div class="mensaje-tierno">Te busco entre las penumbras<br>Encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti,<br>Así que por favor, apodérate de mi cuerpo y mente<br> Dejame en tus labios renacer,<br>Toma mis alas y úname a ti</div>
+    <div class="mensaje-tierno">Te busco entre las penumbras<br>Encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti,<br>Así que por favor apodérate de mi cuerpo y mente<br>Luego déjame en tus labios renacer,<br>Toma mis alas y úname a ti</div>
     <div class="contenedor-imagenes">
         <img class="gif" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat.gif" alt="Gatito Tierno">
         <img class="flores" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/flowers-rose.gif" alt="Ramo de flores">
     </div>
     <img class="gif-triste" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/boomb-cat-boomb.gif" alt="GIF Triste">
-    <img class="gif-pensando" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat-death-penalty.gif"GIF Pensando">
+    <img class="gif-pensando" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat-death-penalty.gif" alt="GIF Pensando">
+    <img class="gif-momento" src="" alt="GIF Momento">
     <script>
         function mostrarSorpresa() {
+            document.querySelector('.mensaje').innerText = '¡Sabía que dirías que sí! ❤️';
             document.querySelector('.mensaje-tierno').style.display = 'block';
             document.querySelector('.gif').style.display = 'block';
             document.querySelector('.flores').style.display = 'block';
             document.querySelector('.gif-triste').style.display = 'none';
             document.querySelector('.gif-pensando').style.display = 'none';
+            document.querySelector('.gif-momento').src = 'https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat.gif';
+            document.querySelector('.gif-momento').style.display = 'block';
         }
         function mostrarTristeza() {
+            document.querySelector('.mensaje').innerText = 'Oh no, mi corazón se rompe... 💔';
             document.querySelector('.gif-triste').style.display = 'block';
             document.querySelector('.gif').style.display = 'none';
             document.querySelector('.flores').style.display = 'none';
             document.querySelector('.gif-pensando').style.display = 'none';
+            document.querySelector('.gif-momento').src = 'https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/boomb-cat-boomb.gif';
+            document.querySelector('.gif-momento').style.display = 'block';
         }
         function mostrarPensamiento() {
+            document.querySelector('.mensaje').innerText = 'Tómate tu tiempo, esperaré hasta que digas que sí. 🌑';
             document.querySelector('.gif-pensando').style.display = 'block';
             document.querySelector('.gif').style.display = 'none';
             document.querySelector('.flores').style.display = 'none';
             document.querySelector('.gif-triste').style.display = 'none';
+            document.querySelector('.gif-momento').src = 'https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat-death-penalty.gif';
+            document.querySelector('.gif-momento').style.display = 'block';
         }
     </script>
 </body>
