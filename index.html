@@ -48,13 +48,13 @@
     </style>
 </head>
 <body>
-    <div class="mensaje"> ¿Quieres ser mi San Valentín?🌹</div>
+    <div class="mensaje">¿Quieres ser mi San Valentín?🌹</div>
     <div class="opciones">
         <button onclick="mostrarSorpresa()">Sí</button>
         <button onclick="mostrarTristeza()">No</button>
         <button onclick="mostrarPensamiento()">Déjame pensarlo</button>
     </div>
-    <div class="mensaje-tierno">Te busco entre las penumbras<br>Encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti,<br>Así que por favor, toma mi mente y mi cuerpo<br>Toma mis alas y úname a ti<br>Luego déjame renacer en tus labios</div>
+    <div class="mensaje-tierno">Te busco entre las penumbras<br>Encuentro lo que parece ser mi muerte<br>No, no lo es, solo me estoy entregando a ti,<br>Así que por favor apodérate de mi cuerpo y mente<br>Luego déjame en tus labios renacer,<br>Toma mis alas y úname a ti</div>
     <div class="contenedor-imagenes" style="display: none;">
         <img class="gif" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat.gif" alt="Gatito Tierno">
         <img class="flores" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/flowers-rose.gif" alt="Ramo de flores">
@@ -63,20 +63,20 @@
     <img class="gif-pensando gif-momento" src="https://raw.githubusercontent.com/borrerooreo/liibis/refs/heads/main/cat-death-penalty.gif" alt="GIF Pensando">
     <script>
         function mostrarSorpresa() {
-            alert('Eres la mujer mas hermosa del mundo 🤍');
+            alert('Eres la Mujer mas hermosa del mundo🤍');
             document.querySelector('.mensaje-tierno').style.display = 'block';
             document.querySelector('.contenedor-imagenes').style.display = 'flex';
             document.querySelector('.gif-triste').style.display = 'none';
             document.querySelector('.gif-pensando').style.display = 'none';
         }
         function mostrarTristeza() {
-            alert('No es cierto  😥💔');
+            alert('No es cierto 😥💔');
             document.querySelector('.gif-triste').style.display = 'block';
             document.querySelector('.contenedor-imagenes').style.display = 'none';
             document.querySelector('.gif-pensando').style.display = 'none';
         }
         function mostrarPensamiento() {
-            alert('Tómate tu tiempo, esperaré hasta que digas que sí. ☠');
+            alert('Tómate tu tiempo, esperaré hasta que digas que sí☠ Por favor di que si😔');
             document.querySelector('.gif-pensando').style.display = 'block';
             document.querySelector('.contenedor-imagenes').style.display = 'none';
             document.querySelector('.gif-triste').style.display = 'none';
